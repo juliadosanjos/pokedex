@@ -3,6 +3,7 @@
 import Head from 'next/head'
 import React, { useEffect, useState } from 'react'
 import { searchPokemon, getPokemons, getPokemonsData } from '../api/api'
+import Card from '../components/Card'
 import Navbar from '../components/Navbar'
 import Pokedex from '../components/Pokedex'
 import PokemonSearchForm from '../components/PokemonSearchForm'
@@ -11,10 +12,12 @@ import { PokemonGetDataResponse, PokemonGetResponse, PokemonSearchResponse } fro
 export default function Home() {
   const [loading, setLoading] = useState(false)
   const [search, setSearch] = useState('')
+  const [notFound, setNotFound] = useState(false)
   const [pokemon, setPokemon] = useState<PokemonSearchResponse>()
   const [pokemonsDataList, setPokemonsDataList] = useState<PokemonSearchResponse[]>()
 
   const onSearchHandler = async () => {
+
     try {
       const { data: pokemonSearchResponse } = await searchPokemon(search)
       setPokemon(pokemonSearchResponse)
@@ -29,7 +32,7 @@ export default function Home() {
       setLoading(true)
       const { data: pokemonsGetResponse } = await getPokemons()
       const results = await Promise.all(pokemonsGetResponse.results.map(async (pokemon) => {
-        const { data: pokemonData} = await getPokemonsData(pokemon.url)
+        const { data: pokemonData } = await getPokemonsData(pokemon.url)
         return pokemonData
       }))
       setPokemonsDataList(results)
@@ -54,17 +57,10 @@ export default function Home() {
       </Head>
 
       <Navbar>
-        <PokemonSearchForm onChange={e => setSearch(e.target.value)} onSubmit={onSearchHandler} />
+        <PokemonSearchForm onChange={e => setSearch(e.target.value.toLowerCase())} onSubmit={onSearchHandler} />
       </Navbar>
       {pokemon &&
-        <div>
-          <img src={
-            pokemon.sprites.versions['generation-v']['black-white'].animated.front_default.toString()}
-          />;
-          <h3>{pokemon.name}</h3>
-          <h3>{pokemon.weight.toString()}</h3>
-
-        </div>
+        <Card pokemon={pokemon}></Card>
       }
       <Pokedex pokemonsList={pokemonsDataList} loading={loading} />
 

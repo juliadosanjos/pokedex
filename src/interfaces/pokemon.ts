@@ -15,26 +15,26 @@ export interface PokemonSprites {
 export interface PokemonTypes {
     slot: Number;
     type: {
-        name: String;
+        name: string;
     }
 }
 
 export interface PokemonStats {
     base_stat: Number;
     stat: {
-        name: String;
+        name: string;
     }
 }
 
 export interface PokemonAbility {
     ability: {
-        name: String;
+        name: string;
     }
 }
 
 export interface PokemonForm {
-    name: String;
-    url: String;
+    name: string;
+    url: string;
 }
 
 export interface PokemonSearchResponse {
@@ -47,13 +47,13 @@ export interface PokemonSearchResponse {
 }
 
 export interface PokemonGetResponse {
-    next: String;
-    previous: String;
+    next: string;
+    previous: string;
     results: PokemonForm[];
 }
 
 export interface PokemonGetDataResponse {
-    name: String;
+    name: string;
     weight: Number;
     abilities: PokemonAbility[];
     sprites: PokemonSprites;

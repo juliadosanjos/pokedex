@@ -2,7 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { PokemonForm, PokemonGetDataResponse, PokemonGetResponse, PokemonSearchResponse } from "../../interfaces/pokemon"
 import Card from "../Card";
-import { PokedexStyled } from "./styles";
+import { LoadingStyled, PokedexStyled } from "./styles";
 
 interface PokedexProps {
     pokemonsList: PokemonSearchResponse[];
@@ -15,7 +15,9 @@ const Pokedex = (props: PokedexProps) => {
     return (
         <div>
             {loading ? (
-                <div>Carregando</div>
+                <LoadingStyled>
+                    <img src="https://i.gifer.com/Yg6z.gif" alt="loading" />
+                </LoadingStyled>
             ) : (
                 <PokedexStyled>
                     {pokemonsList && pokemonsList.map((pokemon: PokemonSearchResponse, index: Number) => {
@@ -31,7 +33,3 @@ const Pokedex = (props: PokedexProps) => {
 }
 
 export default Pokedex
-
-function loadCard() {
-    throw new Error("Function not implemented.");
-}

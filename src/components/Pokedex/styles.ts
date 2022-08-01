@@ -12,3 +12,12 @@ export const PokedexStyled = styled.div`
         align-items: stretch;
         gap: 10px;
 `
+
+export const LoadingStyled = styled.div`
+    display: flex;
+    justify-content: center;
+    
+    img {
+        margin-top: 40px;
+    }
+`
