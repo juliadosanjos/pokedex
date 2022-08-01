@@ -1,15 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
+import { PokemonSearchResponse } from "../../interfaces/pokemon";
 import { CardStyled } from "./styles"
 
 interface CardProps {
-    pokemonName: String;
+    pokemon: PokemonSearchResponse;
 }
 
-const Card = (props) => {
-    const { pokemonName } = props
+const Card = (props: CardProps) => {
+    const { pokemon } = props
     return (
         <CardStyled>
-            {pokemonName}
+            <img src={pokemon.sprites.versions["generation-v"]["black-white"].animated.front_default} alt={pokemon.name} />
         </CardStyled>
     )
 }

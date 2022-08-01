@@ -2,9 +2,10 @@
 /* eslint-disable @next/next/no-img-element */
 import { PokemonForm, PokemonGetDataResponse, PokemonGetResponse, PokemonSearchResponse } from "../../interfaces/pokemon"
 import Card from "../Card";
+import { PokedexStyled } from "./styles";
 
 interface PokedexProps {
-    pokemonsList: PokemonGetResponse;
+    pokemonsList: PokemonSearchResponse[];
     loading: boolean;
 }
 
@@ -16,13 +17,13 @@ const Pokedex = (props: PokedexProps) => {
             {loading ? (
                 <div>Carregando</div>
             ) : (
-                <div>
-                    {pokemonsList && pokemonsList.results.map((pokemon: PokemonForm, index: Number) => {
+                <PokedexStyled>
+                    {pokemonsList && pokemonsList.map((pokemon: PokemonSearchResponse, index: Number) => {
                         return (
-                            <Card key={index} pokemonName={pokemon.name}></Card>
+                            <Card key={index.toString()} pokemon={pokemon}></Card>
                         )
                     })}
-                </div>
+                </PokedexStyled>
             )
             }
         </div>

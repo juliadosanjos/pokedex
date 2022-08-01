@@ -12,8 +12,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false)
   const [search, setSearch] = useState('')
   const [pokemon, setPokemon] = useState<PokemonSearchResponse>()
-  const [pokemonsList, setPokemonsList] = useState<PokemonGetResponse>()
-  const [pokemonsDataList, setPokemonsDataList] = useState<PokemonGetDataResponse>()
+  const [pokemonsDataList, setPokemonsDataList] = useState<PokemonSearchResponse[]>()
 
   const onSearchHandler = async () => {
     try {
@@ -29,12 +28,11 @@ export default function Home() {
     try {
       setLoading(true)
       const { data: pokemonsGetResponse } = await getPokemons()
-      setPokemonsList(pokemonsGetResponse)
-      // const promises = pokemonsGetResponse.results.map(async (pokemon) => {
-      //   return await getPokemonsData(pokemon.url)
-      // })
-      // const results = await Promise.all(promises)
-      // setPokemonsDataList(results)
+      const results = await Promise.all(pokemonsGetResponse.results.map(async (pokemon) => {
+        const { data: pokemonData} = await getPokemonsData(pokemon.url)
+        return pokemonData
+      }))
+      setPokemonsDataList(results)
       setLoading(false)
     }
     catch (error) {
@@ -68,7 +66,7 @@ export default function Home() {
 
         </div>
       }
-      <Pokedex pokemonsList={pokemonsList} loading={loading} />
+      <Pokedex pokemonsList={pokemonsDataList} loading={loading} />
 
     </div>
   )

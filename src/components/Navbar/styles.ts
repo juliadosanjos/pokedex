@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const NavStyled = styled.nav`
     height: 100px;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: space-between;

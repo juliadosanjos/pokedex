@@ -1,10 +1,10 @@
 export interface PokemonSprites {
-    front_default: String;
+    front_default: string;
     versions: {
         'generation-v': {
             'black-white': {
                 animated: {
-                    front_default: URL;
+                    front_default: string;
                 }
             }
         }
@@ -38,7 +38,7 @@ export interface PokemonForm {
 }
 
 export interface PokemonSearchResponse {
-    name: String;
+    name: string;
     weight: Number;
     abilities: PokemonAbility[];
     sprites: PokemonSprites;
