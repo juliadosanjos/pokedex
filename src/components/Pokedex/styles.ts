@@ -1,22 +1,19 @@
 import styled from "styled-components";
 
-export const PokedexStyled = styled.div`
+export const PokedexContainer = styled.div`
         width: 100%;
         height: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 2fr 2fr 2fr 2fr;
-        grid-column-gap: 20px;
-        grid-row-gap: 20px;
-        justify-items: stretch;
-        align-items: stretch;
-        gap: 10px;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
 `
 
 export const LoadingStyled = styled.div`
     display: flex;
     justify-content: center;
-    
+
     img {
         margin-top: 40px;
     }

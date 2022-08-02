@@ -19,8 +19,10 @@ export default function Home() {
   const onSearchHandler = async () => {
 
     try {
-      const { data: pokemonSearchResponse } = await searchPokemon(search)
-      setPokemon(pokemonSearchResponse)
+      if(search) {
+        const { data: pokemonSearchResponse } = await searchPokemon(search)
+        setPokemon(pokemonSearchResponse)
+      }
     }
     catch (error) {
       console.log(`Não encontramos esse pokemon!`)
@@ -45,7 +47,6 @@ export default function Home() {
 
   useEffect(() => {
     getAllPokemons()
-    console.log('carregou')
   }, [])
 
   return (
@@ -62,7 +63,8 @@ export default function Home() {
       {pokemon &&
         <Card pokemon={pokemon}></Card>
       }
-      <Pokedex pokemonsList={pokemonsDataList} loading={loading} />
+
+        <Pokedex pokemonsList={pokemonsDataList} loading={loading} />
 
     </div>
   )

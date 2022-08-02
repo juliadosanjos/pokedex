@@ -9,20 +9,16 @@ interface CardProps {
 const Card = (props: CardProps) => {
     const { pokemon } = props
     return (
-    <CardContainerStyled>
-        <CardStyled>
-            <img src={pokemon.sprites.versions["generation-v"]["black-white"].animated.front_default} alt={pokemon.name} />
-            <h2>{pokemon.name}</h2>
-            <h2>Peso: {pokemon.weight.toString()}</h2>
-            <h2>Habilidade: {pokemon.abilities.map(({ability}) => {
-                return ability.name
-            }
-                
-            )}
-            </h2>
-            
-        </CardStyled>
-    </CardContainerStyled>
+        <CardContainerStyled>
+            <CardStyled>
+                <div>
+                    <img src={pokemon.sprites.versions["generation-v"]["black-white"].animated.front_default} alt={pokemon.name} />
+                </div>
+                <div>
+                    <h2>{pokemon.name}</h2>
+                </div>
+            </CardStyled>
+        </CardContainerStyled>
     )
 }
 
