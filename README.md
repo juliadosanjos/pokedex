@@ -1,34 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+  <img alt="Pokedex" src="https://static.wikia.nocookie.net/pokepediabr/images/3/38/Pok%C3%A9dex_Kanto.png/revision/latest?cb=20131224014121&path-prefix=pt-br"       height="100px">
+  <h1>Pokedex</h1>
+</div>
+## 📌 Resumo
+O projeto foi feito para simular uma Pokédex, tem o objetivo de listar Pokémons e possibilita uma buscar pelo nome que deseja achar.
 
-## Getting Started
+## Funcionalidades
+- **Listagem dos Pokémons**: Listar os Pokémons com o uso da API RESTful [PokéAPI](https://pokeapi.co/).
+- **Buscar Pokémons**: Método para procurar a partir do seu nome.
+- **Efeito no card do Pokémon**: Criar uma animação no card para amplia-lo e exibir as informações do Pokémon.
+- **Card exibindo informações do Pokémon**: Pontos de batalha do pokémon, como vida, ataque, defesa.
 
-First, run the development server:
+## 💻 Tecnologias
+
+[Next.js](https://nextjs.org/) | [Styled-components](https://www.styled-components.com/) | [Axios](https://github.com/axios/axios) | [TypeScript](https://www.typescriptlang.org/)
+
+## 📥 Instalação e Execução
 
 ```bash
+git clone https://github.com/juliadosanjos/pokedex.git
+# e
 npm run dev
-# or
+# ou
 yarn dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
