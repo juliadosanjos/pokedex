@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import Card from "../components/Card";
 
 export const GlobalStyle = createGlobalStyle`
     * {
@@ -22,6 +23,11 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Roboto', sans-serif;
     }
 
+    div {
+        .searched {
+            margin-left: 40%;
+        }
+    }
     button {
         cursor: pointer;
     }
