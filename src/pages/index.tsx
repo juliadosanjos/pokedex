@@ -61,7 +61,9 @@ export default function Home() {
         <PokemonSearchForm onChange={e => setSearch(e.target.value.toLowerCase())} onSubmit={onSearchHandler} />
       </Navbar>
       {pokemon &&
-        <Card pokemon={pokemon}></Card>
+        <div>
+          <Card pokemon={pokemon}></Card>
+        </div>
       }
 
         <Pokedex pokemonsList={pokemonsDataList} loading={loading} />

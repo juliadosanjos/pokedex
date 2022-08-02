@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable @next/next/no-img-element */
-import { PokemonForm, PokemonGetDataResponse, PokemonGetResponse, PokemonSearchResponse } from "../../interfaces/pokemon"
+import { PokemonSearchResponse } from "../../interfaces/pokemon"
 import Card from "../Card";
 import { LoadingStyled, PokedexContainer } from "./styles";
 

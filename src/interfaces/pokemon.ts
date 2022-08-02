@@ -51,12 +51,3 @@ export interface PokemonGetResponse {
     previous: string;
     results: PokemonForm[];
 }
-
-export interface PokemonGetDataResponse {
-    name: string;
-    weight: Number;
-    abilities: PokemonAbility[];
-    sprites: PokemonSprites;
-    // types: PokemonTypes[];
-    // stats: PokemonStats[];
-}
