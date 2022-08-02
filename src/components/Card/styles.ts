@@ -1,4 +1,8 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+interface Props {
+    isOpen: boolean;
+}
 
 export const CardStyled = styled.div`
     height: 100%;
@@ -20,10 +24,6 @@ export const CardStyled = styled.div`
         height: 270px;
         justify-content: flex-start;
         animation: expand 0.5s ease;
-
-        &.infoPokemon {
-            
-        }
     }
 
     h2 {
@@ -40,4 +40,31 @@ export const CardContainerStyled = styled.div`
     display: flex;
     align-items: flex-start;
     justify-content: center;
+`
+
+export const InfoPokemon = styled.div<Props>`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: display 0.2s ease;
+    display: ${p => p.isOpen ? 'block' : 'none'};
+
+    div {
+        h2 {
+            text-decoration: underline;
+            margin-bottom: 3px;
+        }
+        h2, p {
+            font-size: xx-small;
+            font-weight: bold;
+        }
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    img {
+        height: 100%;
+    }
 `
