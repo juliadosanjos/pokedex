@@ -37,7 +37,7 @@ const Card = (props: CardProps) => {
                         <div>
                             <p>
                                 {pokemon.types.map((type) => {
-                                    return `| ${type.type.name} |`
+                                    return `| ${type.type.name.toUpperCase()} |`
                                 })}
                             </p>
                         </div>
@@ -56,7 +56,7 @@ const Card = (props: CardProps) => {
                                             {stats.base_stat.toString()}
                                         </p>
                                     </div>
-                                    </>
+                                </>
                                 )
                             }
                         })}

@@ -11,7 +11,7 @@ interface PokedexProps {
 
 const Pokedex = (props: PokedexProps) => {
     const { pokemonsList, loading } = props
-    
+
     return (
         <PokedexContainer>
             {loading ? (

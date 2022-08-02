@@ -11,7 +11,6 @@ export interface PokemonSprites {
     }
 }
 
-
 export interface PokemonTypes {
     slot: Number;
     type: {
